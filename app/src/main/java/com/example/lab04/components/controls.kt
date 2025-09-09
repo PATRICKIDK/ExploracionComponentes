@@ -11,6 +11,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
+import androidx.compose.foundation.layout.*
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.sp
+
 
 // Ejemplo 11: AlertDialog
 @Composable
@@ -229,8 +236,26 @@ fun TooltipExample() {
 fun ButtonExample() {
     Button(
         onClick = { println("Botón presionado!") },
-        modifier = Modifier.padding(8.dp)
+        modifier = Modifier
+            .padding(16.dp)
+            .fillMaxWidth(),
+        colors = ButtonDefaults.buttonColors(
+            containerColor = MaterialTheme.colorScheme.primary,
+            contentColor = MaterialTheme.colorScheme.onPrimary
+        )
     ) {
-        Text("Soy un botón")
+        Text("Soy un botón mejorado", style = MaterialTheme.typography.bodyLarge)
     }
+}
+// Ejemplo 35: TextField
+@Composable
+fun TextFieldExample() {
+    var text by remember { mutableStateOf("") }
+
+    OutlinedTextField(
+        value = text,
+        onValueChange = { text = it },
+        label = { Text("Ingresa texto") },
+        modifier = Modifier.padding(8.dp)
+    )
 }
