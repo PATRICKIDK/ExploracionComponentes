@@ -231,7 +231,7 @@ fun TooltipExample() {
     Text("Tooltip no está en Material3 todavía. Placeholder.")
 
 }
-// Ejemplo 34: Button
+// Ejemplo 34: Button mejorado
 @Composable
 fun ButtonExample() {
     Button(
