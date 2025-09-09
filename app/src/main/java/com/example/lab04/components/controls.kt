@@ -222,4 +222,15 @@ fun TabRowExample() {
 @Composable
 fun TooltipExample() {
     Text("Tooltip no está en Material3 todavía. Placeholder.")
+
+}
+// Ejemplo 34: Button
+@Composable
+fun ButtonExample() {
+    Button(
+        onClick = { println("Botón presionado!") },
+        modifier = Modifier.padding(8.dp)
+    ) {
+        Text("Soy un botón")
+    }
 }

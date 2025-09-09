@@ -55,7 +55,10 @@ fun MyApp() {
                     // Controles extra
                     "BottomNavigation", "Dialog", "Divider", "DropDownMenu",
                     "LazyVerticalGrid", "NavigationRail", "OutlinedTextField",
-                    "Pager", "Snackbar", "TabRow", "Tooltip"
+                    "Pager", "Snackbar", "TabRow", "Tooltip",
+
+                    // Nuevo
+                    "Button"
                 )
 
                 ejemplos.forEach { ejemplo ->
@@ -107,6 +110,7 @@ fun MyApp() {
                     "Snackbar" -> SnackbarExample()
                     "TabRow" -> TabRowExample()
                     "Tooltip" -> TooltipExample()
+                    "Button" -> ButtonExample()
                 }
 
                 Spacer(modifier = Modifier.height(16.dp))
