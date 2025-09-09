@@ -11,6 +11,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
+import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.TextFieldDefaults
+import androidx.compose.runtime.*
+import androidx.compose.ui.graphics.Color
+
+
+
 
 // Ejemplo 11: AlertDialog
 @Composable
@@ -233,4 +240,24 @@ fun ButtonExample() {
     ) {
         Text("Soy un botón")
     }
+}
+@Composable
+fun TextFieldExample() {
+    var text by remember { mutableStateOf("") }
+
+    OutlinedTextField(
+        value = text,
+        onValueChange = { text = it },
+        label = { Text("Ingresa texto") },
+        placeholder = { Text("Escribe aquí...") },
+        singleLine = true,
+        modifier = Modifier
+            .padding(16.dp)
+            .fillMaxWidth(),
+        colors = TextFieldDefaults.colors(
+            focusedIndicatorColor = MaterialTheme.colorScheme.primary,
+            unfocusedIndicatorColor = Color.Gray,
+            cursorColor = MaterialTheme.colorScheme.primary
+        )
+    )
 }
